@@ -15,7 +15,7 @@ Meet **MIXE OS**, the lightweight Linux operating system designed to rescue your
 - **File Formats**: MIXE OS is currently available in **.ova format**. A **.iso file** for live boot and complete installation will be available soon. Stay tuned!
 - **In Development**: We’re busy making it even better, like a chef perfecting their secret recipe (just without the culinary disasters).
 
-![Current Status Screenshot](images/status.png)  <!-- Replace with your actual image path -->
+![Current Status Screenshot](img/a2.png)  <!-- Replace with your actual image path -->
 
 ## Getting Started
 1. **Download** the latest version from our [Releases](#) section. (No sketchy file-sharing sites here, promise!)
