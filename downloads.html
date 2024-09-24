@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/all.png" type="image/png">
+    <title>Downloads - MIXE OS</title>
+    <style>
+        /* Custom Scrollbar */
+        /* Scrollbar width */
+        ::-webkit-scrollbar {
+            width: 12px; /* Scrollbar width */
+        }
+
+        /* Scrollbar track (background of the scroll bar) */
+        ::-webkit-scrollbar-track {
+            background: #333; /* Dark grey track */
+            border-radius: 10px; /* Curved scrollbar track */
+        }
+
+        /* Scrollbar thumb (the draggable part) */
+        ::-webkit-scrollbar-thumb {
+            background-color: #000; /* Black color for the thumb */
+            border-radius: 10px; /* Curved scrollbar thumb */
+            border: 3px solid #333; /* Optional: gives the thumb a padded effect */
+        }
+
+        /* Scrollbar thumb hover (when hovered) */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Slightly lighter black when hovered */
+        }
+
+        body {
+            background-color: black;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        #output {
+            width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            border-radius: 15px; /* Rounded corners */
+            color: white;
+            font-size: 1.5em; /* Increase font size */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+
+        .download-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            text-align: center;
+        }
+
+        .coming-soon {
+            background-color: rgba(255, 255, 255, 0.05); /* Transparent fog */
+            backdrop-filter: blur(20px); /* Heavy blur for fog effect */
+            padding: 20px;
+            border-radius: 10px;
+            color: gray;
+            font-style: italic;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon::after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        a {
+            color: cyan;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="output">
+        <h1>Downloads - MIXE OS</h1>
+
+        <!-- OVA Download Section -->
+        <div class="download-section">
+            <h2>OVA File</h2>
+            <p>
+                Ready to get started with MIXE OS in a virtual environment? <br>
+                <a href="path/to/mixe-os.ova" download>Download OVA File</a> (for VirtualBox and VMware)
+            </p>
+        </div>
+
+        <!-- Complete ISO Section -->
+        <div class="download-section coming-soon">
+            <h2>Complete ISO</h2>
+            <p>
+                The full experience of MIXE OS in one file. (Stay tuned, it's coming soon!)
+            </p>
+        </div>
+
+        <!-- Live Boot ISO Section -->
+        <div class="download-section coming-soon">
+            <h2>Live Boot ISO</h2>
+            <p>
+                Test drive MIXE OS without installing. <br>
+                (Live boot feature coming soon!)
+            </p>
+        </div>
+    </div>
+</body>
+</html>

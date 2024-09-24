@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://jash-jetly.github.io/mixeos/all.png" type="image/png">
+    <title>Jash Jetly - About</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            cursor: none;
+        }
+
+        #output {
+            width: 80%;
+            max-height: 70%;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            border-radius: 15px; /* Rounded corners */
+            color: white;
+            font-size: 1.5em; /* Increase font size */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+
+        #command-input {
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            border: none;
+            color: white;
+            outline: none;
+            font-size: 1.5em; /* Increase font size */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+
+        #custom-cursor {
+            position: absolute;
+            background-color: white;
+            width: 15px;
+            height: 35px;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.5); /* Semi-transparent placeholder text */
+        }
+
+        /* Custom Scrollbar */
+        /* Scrollbar width */
+        ::-webkit-scrollbar {
+            width: 12px; /* Scrollbar width */
+        }
+
+        /* Scrollbar track (background of the scroll bar) */
+        ::-webkit-scrollbar-track {
+            background: #333; /* Dark grey track */
+            border-radius: 10px; /* Curved scrollbar track */
+        }
+
+        /* Scrollbar thumb (the draggable part) */
+        ::-webkit-scrollbar-thumb {
+            background-color: #000; /* Black color for the thumb */
+            border-radius: 10px; /* Curved scrollbar thumb */
+            border: 3px solid #333; /* Optional: gives the thumb a padded effect */
+        }
+
+        /* Scrollbar thumb hover (when hovered) */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Slightly lighter black when hovered */
+        }
+
+        footer {
+            width: 80%;
+            padding: 10px;
+            margin-top: auto;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            border-radius: 10px; /* Rounded corners */
+            color: white;
+            text-align: center;
+            font-size: 1.2em; /* Slightly larger font size for the footer */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+    </style>
+</head>
+<body>
+    <div id="output">
+        <p>Welcome to the world of <strong>Jash Jetly</strong>! Type <code>help</code> for a list of commands.</p>
+    </div>
+    <input type="text" id="command-input" placeholder="Type your command...">
+    <footer>
+        <p>&copy; 2024 Jash Jetly. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const commandInput = document.getElementById('command-input');
+        const output = document.getElementById('output');
+
+        commandInput.focus();
+
+        const cursor = document.createElement('div');
+        cursor.id = 'custom-cursor';
+        cursor.style.position = 'absolute';
+        cursor.style.width = '15px';
+        cursor.style.height = '35px';
+        cursor.style.backgroundColor = 'white';
+        document.body.appendChild(cursor);
+
+        const commands = {
+            'bio': 'Hey there! I’m Jash Jetly—17, a coder, an aspiring cybersecurity expert, a business-driven entrepreneur, and a relentless swimmer. I’ve navigated life’s rough waves, one stroke at a time.',
+            'book': 'Author of "Young Bucks - Making Money from a Kid\'s Perspective." My book simplifies economics for kids in a way that makes money management as fun as a video game. Available on Amazon!',
+            'mixe': 'I created MIXE OS—a lightweight, open-source Linux-based operating system for low-spec PCs. Built on the Debian kernel, it’s perfect for those tired of sluggish systems and endless Windows updates.',
+            'j-tenders': 'During the lockdown, I spearheaded J-Tenders, a project that helped 50 small offline stall owners move online. Empowering them to thrive in tough times, for FREE. Because why not?',
+            'company': 'Founder of J-Company—a digital services venture where I helped 50 clients build websites and enhance SEO. Made over $5,000 from it, and trust me, that felt amazing at 17!',
+            'swimming': 'Swimming is my therapy. It’s where I built the mental resilience that helped me deal with family issues, improve my focus, and push through emotional and academic obstacles.',
+            'projects': 'From MIXE OS to J-Tenders, my projects are all about problem-solving. Whether it’s creating a faster OS or setting up online stores for struggling vendors, I love turning ideas into reality.',
+            'achievements': 'My top achievements: \n1. Created MIXE OS (a Linux-based operating system for low-spec PCs). \n2. Authored "Young Bucks - Making Money from a Kid\'s Perspective." \n3. Founded J-Company and helped 50 clients with website and SEO services. \n4. Spearheaded J-Tenders, helping 50 small businesses go online for free. \n5. Raised $15,000 for an orphanage.',
+            'back': () => {
+                history.back();
+            },
+            'resume': () => {
+                window.open('https://jash-jetly.github.io/mixeos/resume.pdf');
+            },
+            'demo': () => {
+                window.open('https://www.youtube.com/watch?v=iDyTrx2uVY4', '_blank');
+            },
+            'help': 'Available commands: bio, book, mixe, j-tenders, company, resume, swimming, projects, achievements, back, demo, clear',
+            'clear': () => {
+                output.innerHTML = '';
+            }
+        };
+
+        commandInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const command = commandInput.value.trim();
+                commandInput.value = '';
+
+                if (command in commands) {
+                    if (typeof commands[command] === 'function') {
+                        commands[command]();
+                    } else {
+                        output.innerHTML += `<p>${commands[command]}</p>`;
+                    }
+                } else {
+                    output.innerHTML += '<p>Command not found. Type "help" for a list of available commands.</p>';
+                }
+
+                output.scrollTop = output.scrollHeight;
+            }
+
+            // Tab completion logic
+            if (e.key === 'Tab') {
+                e.preventDefault(); // Prevent default tab behavior
+                const typedCommand = commandInput.value.trim();
+                const matchingCommands = Object.keys(commands).filter(cmd => cmd.startsWith(typedCommand));
+
+                if (matchingCommands.length === 1) {
+                    commandInput.value = matchingCommands[0];
+                }
+            }
+        });
+
+        document.addEventListener('click', () => {
+            commandInput.focus();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+    });
+</script>
+</body>
+</html>
