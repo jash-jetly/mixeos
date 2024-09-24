@@ -18,9 +18,10 @@ Meet **MIXE OS**, the lightweight Linux operating system designed to rescue your
 ![Current Status Screenshot](img/a2.png)  <!-- Replace with your actual image path -->
 
 ## Getting Started
-1. **Download** the latest version from our [Releases](#) section. (No sketchy file-sharing sites here, promise!)
-2. **Create a Bootable USB**: Use tools like [Rufus](https://rufus.ie/) or [Etcher](https://www.balena.io/etcher/) to make your USB drive do magic tricks.
-3. **Boot Up**: Plug in your USB, restart your computer, and voila! You’re sailing on the seas of MIXE OS.
+1. **Download** the latest version from our [website](https://jash-jetly.github.io/mixeos/downloads.html) section. (No sketchy file-sharing sites here, promise!)
+2. **Virtual Box**: Download [Virtual Box](https://www.virtualbox.org/)
+3. **Create a Virtual Machine**: ![Current Status Screenshot](img/a3.png)
+4. **Boot Up**: Start you Virtual Machine and voila! You’re sailing on the seas of MIXE OS.
 
 ## Future Plans
 - An installation wizard that’s easier than teaching a cat to fetch (good luck with that!).
