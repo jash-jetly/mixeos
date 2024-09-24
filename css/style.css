@@ -33,7 +33,7 @@ body {
 
 .custom-cursor {
     width: 15px; /* width of the white block */
-    height: 100px; /* height of the white block */
+    height: 35px; /* height of the white block */
     background-color: white; /* color of the white block */
     position: absolute;
     pointer-events: none; /* Prevent the block from interfering with clicks */
