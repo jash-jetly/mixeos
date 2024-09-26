@@ -20,7 +20,7 @@ Meet **MIXE OS**, the lightweight Linux operating system designed to rescue your
 ## Getting Started
 1. **Download** the latest version from our [website](https://jash-jetly.github.io/mixeos/downloads.html) section. (No sketchy file-sharing sites here, promise!)
 2. **Virtual Box**: Download [Virtual Box](https://www.virtualbox.org/)
-3. **Create a Virtual Machine**: ![Current Status Screenshot](img/a3.png)
+3. **Import the Virtual Machine**: ![Current Status Screenshot](img/a3.png)
 4. **Boot Up**: Start you Virtual Machine and voila! You’re sailing on the seas of MIXE OS.
 
 ## Future Plans
